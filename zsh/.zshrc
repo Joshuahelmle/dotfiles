@@ -72,3 +72,11 @@ source /usr/share/fzf/completion.zsh
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 addToPath "$HOME/go/bin"
+
+# pnpm
+export PNPM_HOME="/home/breejosh/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
