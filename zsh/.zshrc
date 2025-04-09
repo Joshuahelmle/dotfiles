@@ -14,6 +14,17 @@ plugins=(
 	extract
 	)
 
+#custom functions
+addToPath () {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        export PATH="$1:$PATH"
+    fi
+}
+
+take () {
+  mkdir -p "$1" && cd "$1"
+}
+
 setopt complete_aliases
 # User configuration
 
@@ -21,6 +32,16 @@ setopt complete_aliases
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+
+# Mason pnpm
+export MASON_NODE_PACKAGE_MANAGER=pnpm
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# user alias collection
+
+alias ls='ls --color=auto'
+alias ll='ls -lh --color=auto'
+alias la='ls -lha --color=auto'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -46,3 +67,8 @@ fi
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+addToPath "$HOME/go/bin"
