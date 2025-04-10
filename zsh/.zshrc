@@ -33,8 +33,6 @@ setopt complete_aliases
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Mason pnpm
-export MASON_NODE_PACKAGE_MANAGER=pnpm
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # user alias collection
