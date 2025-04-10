@@ -40,6 +40,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 alias ls='ls --color=auto'
 alias ll='ls -lh --color=auto'
 alias la='ls -lha --color=auto'
+alias gst='git status'
+alias lg='lazygit'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
