@@ -68,6 +68,11 @@ fi
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
+zstyle ':completion:*:*:git:*' script "$XDG_CONFIG_HOME"/zsh/git_completions.bash
+fpath=("$XDG_CONFIG_HOME"/zsh $fpath)
+autoload -Uz compinit
+compinit
+
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
