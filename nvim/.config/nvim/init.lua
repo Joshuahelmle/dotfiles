@@ -142,6 +142,9 @@ require('lazy').setup({
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.ts-tools',
+  require 'kickstart.plugins.godot',
+  require 'kickstart.plugins.kitty-scrollback',
+
   { import = 'custom.plugins' },
 }, {
   ui = {
