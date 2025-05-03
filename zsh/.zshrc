@@ -1,4 +1,3 @@
-eval "$(starship init zsh)"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -25,6 +24,15 @@ take () {
   mkdir -p "$1" && cd "$1"
 }
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=1000
+setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
+setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 setopt complete_aliases
 # User configuration
 
@@ -34,6 +42,7 @@ setopt complete_aliases
 # export LANG=en_US.UTF-8
 
 export XDG_CONFIG_HOME="$HOME/.config"
+eval "$(starship init zsh)"
 
 # user alias collection
 
@@ -42,6 +51,7 @@ alias ll='ls -lh --color=auto'
 alias la='ls -lha --color=auto'
 alias gst='git status'
 alias lg='lazygit'
+alias vim='nvim'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
